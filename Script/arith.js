@@ -10,5 +10,13 @@ var b = 50 % 3;
 console.log(b);
 
 var ab = 50;
-ab++;
-console.log(ab);
+x = ++ab + 6;
+console.log(x);
+// ++ab;
+// ++ab;
+// --ab;
+// // ++ab;
+// console.log(ab++);
+
+var te = "veera";
+console.log("hello " + te + " Yaami");
