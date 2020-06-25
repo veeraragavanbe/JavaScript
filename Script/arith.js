@@ -19,4 +19,8 @@ console.log(x);
 // console.log(ab++);
 
 var te = "veera";
-console.log("hello " + te + " Yaami");
+console.log(10 - te);
+console.log(typeof(NaN));
+
+console.log('1 < 2 = ', 1 < 2);
+console.log("20 == 10 =", 20 != 10);
