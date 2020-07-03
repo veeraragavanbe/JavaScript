@@ -24,3 +24,15 @@ console.log(typeof(NaN));
 
 console.log('1 < 2 = ', 1 < 2);
 console.log("20 == 10 =", 20 != 10);
+
+console.log(5 == '5');
+
+console.log(15 === 15);
+console.log(!true);
+console.log(".............................");
+console.log(10 || 100);
+var sum;
+
+sum = false;
+
+console.log(sum || true);
