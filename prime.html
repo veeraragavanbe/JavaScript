@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>test</title>
+</head>
+
+<body>
+    <h2>Prime or not</h2>
+    <form>
+        <input type="text" placeholder="enter value" id="num_1">
+        <input type="button" value="click" name="click" id="set">
+    </form>
+    <script>
+        document.getElementById('set').onclick = function() {
+            var x = document.getElementById("num_1").value;
+            var x2 = parseInt(x);
+
+            if (x2 % 2 == 0) {
+                console.log("not a prime number");
+            } else {
+                console.log("It is prime number");
+            }
+
+            for (i = 0; i < 100; i++) {
+                if (i % 2 == 0) {
+                    fun1(i);
+                } else {
+                    fun2(i);
+                }
+            }
+        }
+
+        function fun1(i) {
+            console.log("This are prime numbers" + i);
+        }
+
+        function fun2(i) {
+            console.log("This are not prime number" + i);
+        }
+    </script>
+</body>
+
+</html>
