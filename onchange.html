@@ -1,0 +1,22 @@
+<!-- The onchange event is mostly used on textboxes.
+     The event handler gets called when the text inside the textbox changes and 
+     focus is lost from the element. -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Page Title</title>
+</head>
+
+<body>
+    <input type="text" id="name" onchange="change()">
+    <script>
+        function change() {
+            var x = document.getElementById('name');
+            x.value = x.value.toUpperCase();
+        }
+    </script>
+</body>
+
+</html>
