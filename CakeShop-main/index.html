@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/log.css">
+    <style>
+        body {
+            background: url(img/sl4.jpg) no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
+    </style>
+</head>
+
+<body onload="fetch_()">
+
+    <div class=" margin_ container-fluid px-1 px-md-5 px-lg-1 px-xl-5 py-5 mx-auto">
+        <div class="card card0 border-0 " style="height: 736px;margin-top: 2%;">
+            <div class="row d-flex">
+                <div class="col-lg-6" style="margin-top: 8%;">
+                    <div class="card1 pb-5">
+
+                        <div class="row px-3 justify-content-center mt-4 mb-5 border-line"> <img src="img/sl3.jpg" class="image"> </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 car_mob">
+                    <div class="card2 card border-0 px-4 py-5" style="margin-top: 13%;">
+                        <!-- <div class="row mb-4 px-3">
+                            <h6 class="mb-0 mr-4 mt-2">Sign in with</h6>
+                            <div class="facebook text-center mr-3">
+                                <div class="fa fa-facebook"></div>
+                            </div>
+                            <div class="twitter text-center mr-3">
+                                <div class="fa fa-twitter"></div>
+                            </div> 
+                            <div class="linkedin text-center mr-3">
+                                <div class="fa fa-linkedin"></div>
+                            </div>
+                        </div> -->
+                        <div class="row px-3 mb-4">
+                            <div class="line"></div> <small class="loghere_text or text-center" style="font-size: 14px;">Login</small>
+                            <div class="line"></div>
+                        </div>
+                        <div class="row px-3"> <label class="mb-1">
+                                <h6 class="mb-0 text-sm">Email Address</h6>
+                            </label> <input class="mb-4" type="text" id="email_field" name="email" placeholder="Enter a valid email address"> </div>
+                        <div class="row px-3"> <label class="mb-1">
+                                <h6 class="mb-0 text-sm">Password</h6>
+                            </label> <input type="password" name="password" id="password_field" placeholder="Enter password"> </div>
+                        <div class="row px-3 mb-4">
+                            <div class="custom-control custom-checkbox custom-control-inline"> <input id="chk1" type="checkbox" name="chk" class="custom-control-input"> <label for="chk1" class="custom-control-label text-sm">Remember me</label> </div> <a href="#" class="ml-auto mb-0 text-sm">Forgot Password?</a>
+                        </div>
+                        <div class="row mb-3 px-3"> <button type="submit" class="btn btn-blue text-center" onclick="login()">Login</button> </div>
+                        <div class="row mb-4 px-3"> <small class="font-weight-bold">Don't have an account? <a class="text-danger" href="signup.html">Register</a></small> </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-blue py-4">
+                <div class="row px-3"> <small class="ml-4 ml-sm-5 mb-2">Copyright &copy; 2019. All rights reserved.</small>
+                    <div class="social-contact ml-4 ml-sm-auto"> <span class="fa fa-facebook mr-4 text-sm"></span> <span class="fa fa-google-plus mr-4 text-sm"></span> <span class="fa fa-linkedin mr-4 text-sm"></span> <span class="fa fa-twitter mr-4 mr-sm-5 text-sm"></span> </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js " integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN " crossorigin="anonymous "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js " integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q " crossorigin="anonymous "></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js " integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl " crossorigin="anonymous "></script>
+
+
+    <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js "></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js "></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-auth.js "></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-database.js "></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-storage.js "></script>
+    <script src="js/auth.js ">
+    </script>
+    <script src="js/order.js "></script>
+</body>
+
+</html>

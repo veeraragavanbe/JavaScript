@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/mystyle.css">
+</head>
+
+<body onload="fetch_()">
+
+    <div class="row">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4" style="background-color: aqua; height: 600px; margin-top: 50px;">
+            <img id="im_ord_prod" style="height: 200px; width: 200px; margin-left: 5%; margin-top: 17px;">
+            <div style="margin-top: -35%;margin-left: 53%;">
+                <p id="item_name_para"></p>
+                <p id="item_price_para"></p>
+                <select id="_quantity_">
+                    
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select><br>
+                <button id="review_" style="margin-top: 8px;">Review Order</button>
+            </div>
+
+            <div id="order_summ_div" style="display: none;">
+                <h5 style="text-align: center;">ORDER SUMMARY</h5>
+                <p><label>Product Name :</label> <label id="prod_name_"></label></p>
+                <p><label>Product Cost :</label> <label id="prod_cost_"></label></p>
+                <p><label>Quantity     :</label> <label id="prod_quantity_"></label></p>
+                <p><label>Total Cost   :</label> <label id="prod_Total_"></label></p>
+
+                <button id="place_order_" class="form-group">Confirm order</button>
+            </div>
+        </div>
+
+        <div class=" col-sm-4 "></div>
+
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js " integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN " crossorigin="anonymous "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js " integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q " crossorigin="anonymous "></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js " integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl " crossorigin="anonymous "></script>
+
+
+    <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js "></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js "></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-auth.js "></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-database.js "></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-storage.js "></script>
+    <script src="js/auth.js ">
+    </script>
+    <script src="js/order.js "></script>
+</body>
+
+</html>

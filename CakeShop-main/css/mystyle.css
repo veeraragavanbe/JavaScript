@@ -1,0 +1,162 @@
+body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
+.carousel-item img {
+    opacity: 100%;
+}
+
+.jumbotron {
+    background-color: #fcdef5;
+}
+
+.card {
+    border: none
+}
+
+div.sticky {
+    width: 100%;
+    position: -webkit-fixed;
+    position: fixed;
+    top: 0;
+    z-index: 11998;
+}
+
+.navbar {
+    width: 102%;
+}
+
+#nav_rit {
+    margin-left: 79%;
+}
+
+#nav_rit_2 {
+    margin-left: 70%;
+}
+
+@media only screen and (max-width: 600px) {
+    .navbar {
+        width: 110%;
+    }
+    #nav_rit {
+        margin-left: 0%;
+    }
+    div.sticky {
+        width: 100%;
+        position: static;
+        /* position: fixed; */
+        top: 0;
+        z-index: 11998;
+    }
+    #colum4_ {
+        margin-top: 239px;
+        margin-left: -131px;
+    }
+    #cart_btn_ {
+        margin-left: 0%;
+        margin-top: 6px;
+    }
+    #img_element {
+        margin-top: 4px;
+    }
+}
+
+
+/* login signin design */
+
+.login-trigger {
+    font-weight: bold;
+    color: #fff;
+    background: linear-gradient(to bottom right, #f35dbe, #ff000c);
+    padding: 6px 29px;
+    border-radius: 30px;
+    position: relative;
+    top: 50%;
+}
+
+
+/*Modal*/
+
+h4 {
+    font-weight: bold;
+    color: #fff;
+}
+
+.close {
+    color: #fff;
+    transform: scale(1.2)
+}
+
+.modal-content {
+    font-weight: bold;
+    background: linear-gradient(to bottom right, #F87E7B, #B05574);
+}
+
+.form-control {
+    margin: 1em 0;
+}
+
+.form-control:hover,
+.form-control:focus {
+    box-shadow: none;
+    border-color: #fff;
+}
+
+.username,
+.password {
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    border-bottom: 2px solid #eee;
+    padding-left: 0;
+    font-weight: normal;
+    background: transparent;
+}
+
+.form-control::-webkit-input-placeholder {
+    color: #eee;
+}
+
+.form-control:focus::-webkit-input-placeholder {
+    font-weight: bold;
+    color: #fff;
+}
+
+.login {
+    padding: 6px 20px;
+    border-radius: 20px;
+    background: none;
+    border: 2px solid #FAB87F;
+    color: #FAB87F;
+    font-weight: bold;
+    transition: all .5s;
+    margin-top: 1em;
+}
+
+.login:hover {
+    background: #FAB87F;
+    color: #fff;
+}
+
+#item_name_para {
+    font-family: fantasy;
+    font-size: 24px;
+    background-color: aqua;
+    color: red;
+    width: 200px;
+}
+
+#item_price_para {
+    font-family: cursive;
+    font-size: 25px;
+}
+
+
+/* order summary */
+
+#order_summ_div {
+    margin-top: 15%;
+    height: 300px;
+    background-color: blanchedalmond;
+}
