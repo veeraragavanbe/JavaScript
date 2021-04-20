@@ -38,10 +38,10 @@
                         <li class="nav-item active">
                             <a class="nav-link" href="#" style="color: white; font-weight: bold;">Cart<span class="sr-only">(current)</span></a>
                         </li>
+
                     </ul>
                     <form class="form-inline my-2 my-lg-0">
-
-
+                        <a class="login-trigger" href="#" data-target="#login" data-toggle="modal" id="lg_out">Logout</a>
                     </form>
                 </div>
             </nav>
@@ -166,6 +166,29 @@
         $(function() {
             $("#foot_").load("footer.html");
         });
+    </script>
+
+    <script>
+        document.getElementById("lg_out").onclick = function() {
+            //firebase.auth().signOut();
+            firebase.auth().signOut().then(() => {
+                // Sign-out successful.
+                //alert("Signed out");
+                test();
+            }).catch((error) => {
+                // An error happened.
+            });
+
+            //window.location.href = 'index.html';
+            //document.getElementById('result-name').value = "";
+
+        }
+
+        function test() {
+            //window.location.assign('index.html');
+            localStorage.clear();
+            window.location.href = 'index.html';
+        }
     </script>
 
 </body>
