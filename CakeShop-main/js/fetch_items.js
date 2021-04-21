@@ -1,4 +1,18 @@
+var email_from_login;
+var count_cart = 0;
+
 function fetch_item() {
+
+    email_from_login = localStorage.getItem("EMAIL_FROM_SIGN_UP");
+
+    var playersRef = firebase.database().ref("Cart/");
+    var cust_email = email_from_login;
+
+    playersRef.orderByChild("Custom_Email_").equalTo(cust_email).on("child_added", function(data) {
+        count_cart++;
+
+        document.getElementById('_cart_').innerHTML = count_cart;
+    });
 
     firebase.database().ref().child('Food_Shop/').on('value', function(snapshot) {
         snapshot.forEach(
@@ -83,6 +97,11 @@ function showitems(Item_id_, Item_img, Item_Catagory, Item_Name, Item_Price) {
     });
 
 
+    btn_cart.addEventListener('click', function() {
+        btn_cart_(Item_id_, Item_img, Item_Catagory, Item_Name, Item_Price);
+    });
+
+
 }
 
 function btn_buy_(Item_id_, Item_img, Item_Catagory, Item_Name, Item_Price) {
@@ -91,7 +110,25 @@ function btn_buy_(Item_id_, Item_img, Item_Catagory, Item_Name, Item_Price) {
     sessionStorage.setItem("_Item_Cato_", Item_Catagory);
     sessionStorage.setItem("_Item_name_", Item_Name);
     sessionStorage.setItem("_Item_Price_", Item_Price);
+    sessionStorage.setItem("_Customer_email", email_from_login);
 
     window.location.href = "./order.html";
 
+}
+
+function btn_cart_(Item_id_, Item_img, Item_Catagory, Item_Name, Item_Price) {
+
+    var c_email = email_from_login;
+    var sub_mail = c_email.substring(0, c_email.length - 4);
+
+    firebase.database().ref('Cart/' + sub_mail + "_" + Item_id_).set({
+        Item_Img_URL_: Item_img,
+        Item_Id_: Item_id_,
+        Item_cate_: Item_Catagory,
+        Item_name_: Item_Name,
+        Item_Price_: Item_Price,
+        Custom_Email_: c_email
+    });
+    alert("Added to Cart...");
+    window.location.reload();
 }

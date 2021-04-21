@@ -31,14 +31,20 @@ document.getElementById('review_').onclick = function() {
 
 function order_place_success(item_name_, item_price_, qty, total, item_img_, item_id_, item_cato_) {
     document.getElementById('place_order_').onclick = function() {
-        firebase.database().ref('Custmer_Order/' + item_id_ + item_price_).set({
+        var c_email = sessionStorage.getItem("_Customer_email");
+
+        var sub_email = c_email.substring(0, c_email.length - 4);
+
+        firebase.database().ref('Custmer_Order/' + sub_email + "_" + total).set({
             Item_Img_URL: item_img_,
             Item_Id: item_id_,
             Item_cate: item_cato_,
             Item_name: item_name_,
             Item_Price: item_price_,
             Total_Price: total,
-            Quantity: qty
+            Quantity: qty,
+            Custom_Emai: c_email
         });
+        alert("Your Order Placed...");
     }
 }

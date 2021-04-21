@@ -522,3 +522,21 @@ a {
         width: 24%;
     }
 }
+
+
+/* forget pss design */
+
+#forget_box {
+    height: 400px;
+    width: 533px;
+    background-color: #ebd9d9;
+    margin: auto;
+    margin-top: -666px;
+}
+
+#rs_lable {
+    margin-left: 35px;
+    font-style: oblique;
+    margin-top: 23px;
+    font-size: 20px;
+}

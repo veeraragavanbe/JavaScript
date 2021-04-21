@@ -56,7 +56,7 @@
                                 <h6 class="mb-0 text-sm">Password</h6>
                             </label> <input type="password" name="password" id="password_field" placeholder="Enter password"> </div>
                         <div class="row px-3 mb-4">
-                            <div class="custom-control custom-checkbox custom-control-inline"> <input id="chk1" type="checkbox" name="chk" class="custom-control-input"> <label for="chk1" class="custom-control-label text-sm">Remember me</label> </div> <a href="#" class="ml-auto mb-0 text-sm">Forgot Password?</a>
+                            <div class="custom-control custom-checkbox custom-control-inline"> <input id="chk1" type="checkbox" name="chk" class="custom-control-input"> </div> <a href="#" class="ml-auto mb-0 text-sm" id="forget_pass">Forgot Password?</a>
                         </div>
                         <div class="row mb-3 px-3"> <button type="submit" class="btn btn-blue text-center" onclick="login()">Login</button> </div>
                         <div class="row mb-4 px-3"> <small class="font-weight-bold">Don't have an account? <a class="text-danger" href="signup.html">Register</a></small> </div>
@@ -69,6 +69,16 @@
                 </div>
             </div>
         </div>
+    </div>
+
+    <div class="form-group" id="forget_box" style="display: none;">
+        <form>
+            <label id="rs_lable">Enter Your Registered Email address we will Send Reset Password </label>
+            <input id="reset_mail" type="text" class="form-group" placeholder="Enter Email Address" style="width: 70%;margin-left: 15%;">
+            <input type="button" id="reset_btn" value="Reset" class="form-group" style="width: 40%; margin-left: 25%;">
+
+        </form>
+
     </div>
 
     <!-- Optional JavaScript -->
@@ -86,6 +96,36 @@
     <script src="js/auth.js ">
     </script>
     <script src="js/sign_in.js "></script>
+
+
+    <script>
+        document.getElementById('forget_pass').onclick = function() {
+            document.getElementById("forget_box").style.display = 'block';
+        }
+
+
+        //reset password code -->
+
+        document.getElementById('reset_btn').onclick = function() {
+
+            var res_mail = document.getElementById('reset_mail').value;
+            if (res_mail != "") {
+                firebase.auth().sendPasswordResetEmail(res_mail).then(function() {
+                        alert('Reset credential send to your mail id. check Your mail');
+                        window.location.reload();
+                    })
+                    .catch(function(error) {
+                        var errorCode = error.code;
+                        var errorMessage = error.Message;
+                        console.log(errorCode);
+                        console.log(errorMessage);
+                        alert(errorMessage);
+                    });
+            } else {
+                window.alert('Please write your email first');
+            }
+        }
+    </script>
 </body>
 
 </html>

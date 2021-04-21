@@ -8,10 +8,10 @@ firebase.auth().onAuthStateChanged(function(user) {
         var user = firebase.auth().currentUser;
 
         if (user != null) {
-            var common_client_email = user.email;
+            var customer_mail = user.email;
             var uname = firebase.auth().currentUser.uid;
 
-            localStorage.setItem("EMAIL_FROM_SIGN_UP", common_client_email);
+            localStorage.setItem("EMAIL_FROM_SIGN_UP", customer_mail);
             localStorage.setItem("UID_FROM_SIGN_UP", uname);
 
             window.location.assign("./mainpage.html");
