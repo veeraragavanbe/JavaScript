@@ -28,18 +28,20 @@ div.sticky {
 }
 
 #nav_rit {
-    margin-left: 58%;
+    margin-left: 65%;
 }
 
 #nav_rit_2 {
     margin-left: 70%;
 }
 
-#cart_btn_ {
-    margin-left: 2%;
-}
-
 @media only screen and (max-width: 600px) {
+    #first_row_ {
+        width: 76%;
+        border: 1px solid silver;
+        margin-left: 12%;
+        margin-top: 1%;
+    }
     .navbar {
         width: 110%;
     }
@@ -60,53 +62,35 @@ div.sticky {
     #cart_btn_ {
         margin-left: 0%;
         margin-top: 6px;
-        width: 249%;
-        margin-left: 30px;
-    }
-    #buy_btn_ {
-        width: 249%;
-        margin-left: 30px;
     }
     #img_element {
-        margin-top: 4px;
+        height: 174px;
+        width: 182px;
+        margin-top: 4%;
+        margin-left: -61px;
+    }
+    #item_name_para {
+        font-family: fantasy;
+        font-size: 24px;
+        background-color: rgb(234 234 227);
+        color: red;
+        width: 183px;
+        margin-left: -63px;
     }
     #item_price_para {
-        width: 93px;
-        margin-left: 37px;
+        font-family: cursive;
+        font-size: 25px;
+        margin-top: 10%;
+        width: 84px;
+        margin-left: 74px;
     }
-    #im_ord_prod {
-        height: 172px;
-        width: 150px;
-        margin-left: 5%;
-        margin-top: 17px;
+    #rem_cart {
+        width: 108px;
+        margin-left: 56px;
     }
-    #cont_for_quant {
-        margin-top: -31%;
-        margin-left: 5%;
+    #my_cart_title {
+        margin-left: 30%;
     }
-    #review_ {
-        margin-top: 8px;
-        margin-left: -173px;
-    }
-    #_quantity_ {
-        margin-left: 39px;
-    }
-}
-
-#im_ord_prod {
-    height: 200px;
-    width: 200px;
-    margin-left: 5%;
-    margin-top: 17px;
-}
-
-#item_name_para {
-    font-family: fantasy;
-    font-size: 22px;
-    background-color: rgb(234 234 227);
-    color: red;
-    width: 200px;
-    margin-top: 129px;
 }
 
 
@@ -120,6 +104,10 @@ div.sticky {
     border-radius: 30px;
     position: relative;
     top: 50%;
+}
+
+#my_cart_title {
+    margin-left: 45%;
 }
 
 
@@ -210,13 +198,26 @@ h4 {
 }
 
 #first_row_ {
-    width: 75%;
+    width: 40%;
     border: 1px solid silver;
-    margin-left: 13%;
+    margin-left: 30%;
     margin-top: 1%;
 }
 
-#cont_for_quant {
-    margin-top: -67%;
-    margin-left: 53%;
+#buy_now {
+    display: none;
+}
+
+#tot_bill_ {
+    width: 20%;
+    height: 300px;
+    background-color: #e8e8e8;
+    margin-top: 3%;
+    margin-left: 40%;
+}
+
+#img_element {
+    height: 200px;
+    width: 200px;
+    margin-top: 4%;
 }

@@ -1,6 +1,7 @@
 var email_from_login;
 var count_cart = 0;
 
+// fetch total  products
 function fetch_item() {
 
     email_from_login = localStorage.getItem("EMAIL_FROM_SIGN_UP");
@@ -12,8 +13,18 @@ function fetch_item() {
         count_cart++;
 
         document.getElementById('_cart_').innerHTML = count_cart;
+
+        var total_prod_count = sessionStorage.setItem("_total_prod_", count_cart);
+
     });
 
+    // customer name fetched here
+    var dbref = firebase.database().ref("customer_account/");
+    dbref.orderByChild("Email").equalTo(cust_email).on("child_added", function(data) {
+        let cus_name_ = data.val().Full_name;
+        document.getElementById('cust_name_').innerHTML = cus_name_;
+    });
+    // fetch all food items
     firebase.database().ref().child('Food_Shop/').on('value', function(snapshot) {
         snapshot.forEach(
             function(ChilSnapshot) {
@@ -36,6 +47,8 @@ function fetch_item() {
 
 }
 
+// showing fetched items
+
 function showitems(Item_id_, Item_img, Item_Catagory, Item_Name, Item_Price) {
     var div1 = document.getElementById('fet_items');
 
@@ -43,6 +56,8 @@ function showitems(Item_id_, Item_img, Item_Catagory, Item_Name, Item_Price) {
     img_.id = "img_element";
     img_.style.height = "200px";
     img_.style.width = "200px";
+    img_.style.marginTop = "4%";
+
 
     var para_name = document.createElement('p');
     para_name.id = 'item_name_para';
@@ -55,6 +70,7 @@ function showitems(Item_id_, Item_img, Item_Catagory, Item_Name, Item_Price) {
 
     var div1_ = document.createElement('div');
     div1_.className = 'row';
+    div1_.id = "first_row_";
 
     var div2_ = document.createElement('div');
     div2_.className = 'col-2';
@@ -74,9 +90,11 @@ function showitems(Item_id_, Item_img, Item_Catagory, Item_Name, Item_Price) {
     var btn_cart = document.createElement('button');
 
     btn_buy.innerHTML = "Buy Now";
+    btn_buy.id = "buy_btn_";
+
     btn_cart.innerHTML = "Add to Cart";
-    btn_cart.id = "cart_btn_"
-    btn_cart.style.marginLeft = "2%";
+    btn_cart.id = "cart_btn_";
+
 
     div3_.appendChild(img_);
     div3_.appendChild(para_name);
@@ -104,6 +122,7 @@ function showitems(Item_id_, Item_img, Item_Catagory, Item_Name, Item_Price) {
 
 }
 
+// buy product button process share data in session
 function btn_buy_(Item_id_, Item_img, Item_Catagory, Item_Name, Item_Price) {
     sessionStorage.setItem("_Item_Id_", Item_id_);
     sessionStorage.setItem("_Item_Img_", Item_img);
@@ -116,12 +135,14 @@ function btn_buy_(Item_id_, Item_img, Item_Catagory, Item_Name, Item_Price) {
 
 }
 
+// cart button function add item to cart
+
 function btn_cart_(Item_id_, Item_img, Item_Catagory, Item_Name, Item_Price) {
 
     var c_email = email_from_login;
     var sub_mail = c_email.substring(0, c_email.length - 4);
 
-    firebase.database().ref('Cart/' + sub_mail + "_" + Item_id_).set({
+    firebase.database().ref('Cart/' + sub_mail + "_" + Item_Price).set({
         Item_Img_URL_: Item_img,
         Item_Id_: Item_id_,
         Item_cate_: Item_Catagory,
@@ -130,5 +151,5 @@ function btn_cart_(Item_id_, Item_img, Item_Catagory, Item_Name, Item_Price) {
         Custom_Email_: c_email
     });
     alert("Added to Cart...");
-    window.location.reload();
+    // window.location.reload();
 }

@@ -46,5 +46,13 @@ function order_place_success(item_name_, item_price_, qty, total, item_img_, ite
             Custom_Emai: c_email
         });
         alert("Your Order Placed...");
+
+        $(document).ready(function () { 
+            setTimeout(function () { 
+              location.assign("./mainpage.html");
+
+            }, 2000); 
+          }); 
+        // location.assign("./mainpage.html");
     }
 }

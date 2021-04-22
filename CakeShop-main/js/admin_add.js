@@ -4,21 +4,20 @@ var _ImgUrl;
 // selecting image
 
 document.getElementById('sel_prod').onclick = function() {
-    var input = document.createElement('input');
-    input.type = 'file';
-    input.onchange = e => {
-        files = e.target.files;
-        reader = new FileReader();
-        reader.onload = function() {
-            document.getElementById("prod_img").src = reader.result;
+        var input = document.createElement('input');
+        input.type = 'file';
+        input.onchange = e => {
+            files = e.target.files;
+            reader = new FileReader();
+            reader.onload = function() {
+                document.getElementById("prod_img").src = reader.result;
+            }
+            reader.readAsDataURL(files[0]);
         }
-        reader.readAsDataURL(files[0]);
+        input.click();
     }
-    input.click();
-}
-
+    // adding new items into firebase
 document.getElementById("sub_").onclick = function() {
-    // alert("hello");
 
     var _Item_ID_ = document.getElementById("Item_id_").value;
     var _Item_Name_ = document.getElementById("Item_name_").value;
@@ -40,7 +39,7 @@ document.getElementById("sub_").onclick = function() {
             uploadTask.snapshot.ref.getDownloadURL().then(function(url) {
                 _ImgUrl = url;
 
-
+                // inserting records
                 firebase.database().ref('Food_Shop/' + _Item_ID_).set({
                     Item_Img_URL: _ImgUrl,
                     Item_Id: _Item_ID_,
