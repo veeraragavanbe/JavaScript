@@ -71,3 +71,30 @@ function show_cart(c_email_,c_id_,c_img_url,c_item_price,c_cato_,c_name)
     document.getElementById('buy_now').style.display = 'block';
 }
 
+document.getElementById('buy_total_cart').onclick = function()
+{
+    var sum_res = 0;
+    email_from_login = localStorage.getItem("EMAIL_FROM_SIGN_UP");
+
+    var playersRef = firebase.database().ref("Cart/");
+    var cust_email = email_from_login;
+
+    playersRef.orderByChild("Custom_Email_").equalTo(cust_email).on("child_added", function(data) {
+        let c_email_ =data.val().Custom_Email_;
+        let c_id_ = data.val().Item_Id_;
+        let c_img_url = data.val().Item_Img_URL_;
+        let c_item_price = data.val().Item_Price_;
+        let c_cato_ = data.val().Item_cate_;
+        let c_name =data.val().Item_name_;
+
+        console.log(c_email_,c_id_,c_img_url,c_item_price,c_cato_,c_name);
+        sum_res = parseInt(sum_res) + parseInt(c_item_price);
+        
+        cart_total(c_name,sum_res);
+    });
+}
+
+    function cart_total(c_name,sum_res){
+        
+    }
+ 
