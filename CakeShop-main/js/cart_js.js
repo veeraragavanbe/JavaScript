@@ -56,6 +56,13 @@ function show_cart(c_email_,c_id_,c_img_url,c_item_price,c_cato_,c_name)
 
     var btn_buy = document.createElement('button');
     btn_buy.innerHTML = "Remove From Cart";
+
+    var sub_email = c_email_.substring(0, c_email_.length - 4);
+    btn_buy.addEventListener('click', function()
+    {
+        firebase.database().ref('Cart/' + sub_email + "_" + c_item_price).remove();
+        window.location.reload();
+    })
     
     div3_.appendChild(img_);
     div3_.appendChild(para_name);
@@ -87,14 +94,58 @@ document.getElementById('buy_total_cart').onclick = function()
         let c_cato_ = data.val().Item_cate_;
         let c_name =data.val().Item_name_;
 
-        console.log(c_email_,c_id_,c_img_url,c_item_price,c_cato_,c_name);
+        // console.log(c_email_,c_id_,c_img_url,c_item_price,c_cato_,c_name);
         sum_res = parseInt(sum_res) + parseInt(c_item_price);
         
-        cart_total(c_name,sum_res);
+        cart_total(sum_res,c_email_,c_id_,c_img_url,c_item_price,c_cato_,c_name);
     });
 }
 
-    function cart_total(c_name,sum_res){
+    function cart_total(sum_res,c_email_,c_id_,c_img_url,c_item_price,c_cato_,c_name){
+        var total_cart = sessionStorage.getItem("_total_prod_");
+
+        document.getElementById('c_tot_prod').innerHTML = total_cart;
+        document.getElementById('c_tot_price').innerHTML = sum_res;
+
+        document.getElementById('tot_bill_').style.display = 'block';
+        document.getElementById('cart_data_').style.display = 'none';
         
+        document.getElementById('buy_now').style.display = 'none';
+        
+
+
+
+        place_order_car(c_email_,c_id_,c_img_url,c_item_price,c_cato_,c_name);
+       
+
     }
  
+    function place_order_car(c_email_,c_id_,c_img_url,c_item_price,c_cato_,c_name)
+    {
+        document.getElementById('plc_order').onclick = function()
+        {
+            var sub_email = c_email_.substring(0, c_email_.length - 4);
+            var total = c_item_price;
+            firebase.database().ref('Custmer_Order/' + sub_email + "_" + c_item_price).set({
+                Item_Img_URL: c_img_url,
+                Item_Id: c_id_,
+                Item_cate: c_cato_,
+                Item_name: c_name,
+                Item_Price: c_item_price,
+                Total_Price: total,
+                Quantity: "1",
+                Custom_Emai: c_email_
+            });
+            
+            alert("Your Order Placed...");
+            var sub_email = c_email_.substring(0, c_email_.length - 4);
+            // firebase.database().ref('Cart/' + sub_email + "_" + c_item_price).remove();
+            // firebase.database().ref("Cart/").orderByChild("Custom_Email_").equalTo(c_email_).remove();
+            $(document).ready(function () { 
+                setTimeout(function () { 
+                location.assign("./mainpage.html");
+                }, 2000); 
+              }); 
+        }
+    }
+

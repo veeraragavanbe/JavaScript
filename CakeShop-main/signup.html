@@ -41,6 +41,7 @@
                                 </div>
                                 <div class="form-group">
                                     <input id="repeat_pass" type="password" class="form-control" placeholder="Confirm Password *" value="" />
+                                    <label id="error_msg" style="color: red;"></label>
                                 </div>
 
 
@@ -81,6 +82,32 @@
         document.getElementById('login_btn_').onclick = function() {
             window.location.href = "index.html";
         }
+        // form validation for sign up
+        document.getElementById('repeat_pass').addEventListener('keyup', function()
+        { 
+         if(document.getElementById('pass').value !== document.getElementById('repeat_pass').value)
+            {
+                document.getElementById('error_msg').innerHTML = 'Not Matched';
+                document.getElementById("mobile").disabled = true;
+                document.getElementById("email").disabled = true;
+                document.getElementById("address").disabled = true;
+
+            }
+
+        else{
+                document.getElementById('error_msg').innerHTML = 'Matched';
+                document.getElementById('error_msg').style.color="green";
+                document.getElementById("mobile").disabled = false;
+                document.getElementById("email").disabled = false;
+                document.getElementById("address").disabled = false;
+
+        }
+        })
+
+         // if(document.getElementById('pass').value !== document.getElementById('repeat_pass').value)
+            // {
+            //     console.log("lusu veni");
+            // }
     </script>
 </body>
 

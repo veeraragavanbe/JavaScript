@@ -174,3 +174,11 @@ h4 {
     display: none;
     
 }
+#tot_bill_
+{
+    width: 20%;
+    height: 300px;
+    background-color: #e8e8e8;
+    margin-top: 3%;
+    margin-left: 40%;
+}

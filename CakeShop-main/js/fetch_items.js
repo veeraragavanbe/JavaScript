@@ -11,7 +11,16 @@ function fetch_item() {
     playersRef.orderByChild("Custom_Email_").equalTo(cust_email).on("child_added", function(data) {
         count_cart++;
 
-        document.getElementById('_cart_').innerHTML = count_cart;
+        document.getElementById('_cart_').innerHTML = count_cart;   
+
+        var total_prod_count = sessionStorage.setItem("_total_prod_" , count_cart);
+
+    });
+
+    var dbref = firebase.database().ref("customer_account/");
+        dbref.orderByChild("Email").equalTo(cust_email).on("child_added", function(data) {
+        let cus_name_ = data.val().Full_name;
+        document.getElementById('cust_name_').innerHTML = cus_name_;      
     });
 
     firebase.database().ref().child('Food_Shop/').on('value', function(snapshot) {
@@ -77,9 +86,11 @@ function showitems(Item_id_, Item_img, Item_Catagory, Item_Name, Item_Price) {
     var btn_cart = document.createElement('button');
 
     btn_buy.innerHTML = "Buy Now";
+    btn_buy.id="buy_btn_";
+
     btn_cart.innerHTML = "Add to Cart";
-    btn_cart.id = "cart_btn_"
-    btn_cart.style.marginLeft = "2%";
+    btn_cart.id = "cart_btn_";
+   
 
     div3_.appendChild(img_);
     div3_.appendChild(para_name);
@@ -124,7 +135,7 @@ function btn_cart_(Item_id_, Item_img, Item_Catagory, Item_Name, Item_Price) {
     var c_email = email_from_login;
     var sub_mail = c_email.substring(0, c_email.length - 4);
 
-    firebase.database().ref('Cart/' + sub_mail + "_" + Item_id_).set({
+    firebase.database().ref('Cart/' + sub_mail + "_" + Item_Price).set({
         Item_Img_URL_: Item_img,
         Item_Id_: Item_id_,
         Item_cate_: Item_Catagory,
@@ -133,5 +144,5 @@ function btn_cart_(Item_id_, Item_img, Item_Catagory, Item_Name, Item_Price) {
         Custom_Email_: c_email
     });
     alert("Added to Cart...");
-    window.location.reload();
+    // window.location.reload();
 }

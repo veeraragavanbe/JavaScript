@@ -28,13 +28,16 @@ div.sticky {
 }
 
 #nav_rit {
-    margin-left: 65%;
+    margin-left: 75%;
 }
 
 #nav_rit_2 {
     margin-left: 70%;
 }
-
+#cart_btn_ {
+    margin-left: 2%;
+ 
+}
 @media only screen and (max-width: 600px) {
     .navbar {
         width: 110%;
@@ -56,6 +59,13 @@ div.sticky {
     #cart_btn_ {
         margin-left: 0%;
         margin-top: 6px;
+        width: 249%;
+        margin-left: 30px;
+    }
+    #buy_btn_
+    {
+        width: 249%;
+        margin-left: 30px;
     }
     #img_element {
         margin-top: 4px;
@@ -164,10 +174,9 @@ h4 {
 
 #first_row_
 {
-
     width: 75%;
     border: 1px solid silver;
     margin-left: 13%;
     margin-top: 1%;
-
 }
+
