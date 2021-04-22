@@ -43,6 +43,8 @@ function showitems(Item_id_, Item_img, Item_Catagory, Item_Name, Item_Price) {
     img_.id = "img_element";
     img_.style.height = "200px";
     img_.style.width = "200px";
+    img_.style.marginTop = "4%";
+
 
     var para_name = document.createElement('p');
     para_name.id = 'item_name_para';
@@ -55,6 +57,7 @@ function showitems(Item_id_, Item_img, Item_Catagory, Item_Name, Item_Price) {
 
     var div1_ = document.createElement('div');
     div1_.className = 'row';
+    div1_.id = "first_row_";
 
     var div2_ = document.createElement('div');
     div2_.className = 'col-2';

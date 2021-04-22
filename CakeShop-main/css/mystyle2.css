@@ -163,11 +163,14 @@ h4 {
 }
 
 #first_row_
-{
-
-    width: 75%;
+{  
+    width: 40%;
     border: 1px solid silver;
-    margin-left: 13%;
+    margin-left: 30%;
     margin-top: 1%;
+}
 
+#buy_now{
+    display: none;
+    
 }
