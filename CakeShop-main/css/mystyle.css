@@ -28,17 +28,28 @@ div.sticky {
 }
 
 #nav_rit {
+<<<<<<< HEAD
     margin-left: 58%;
+=======
+    margin-left: 75%;
+>>>>>>> 223fc33b20b9443ea6baf67e98cd3a35390fae05
 }
 
 #nav_rit_2 {
     margin-left: 70%;
 }
+<<<<<<< HEAD
 
 #cart_btn_ {
     margin-left: 2%;
 }
 
+=======
+#cart_btn_ {
+    margin-left: 2%;
+ 
+}
+>>>>>>> 223fc33b20b9443ea6baf67e98cd3a35390fae05
 @media only screen and (max-width: 600px) {
     .navbar {
         width: 110%;
@@ -63,7 +74,12 @@ div.sticky {
         width: 249%;
         margin-left: 30px;
     }
+<<<<<<< HEAD
     #buy_btn_ {
+=======
+    #buy_btn_
+    {
+>>>>>>> 223fc33b20b9443ea6baf67e98cd3a35390fae05
         width: 249%;
         margin-left: 30px;
     }
@@ -209,14 +225,22 @@ h4 {
     background-color: blanchedalmond;
 }
 
+<<<<<<< HEAD
 #first_row_ {
+=======
+#first_row_
+{
+>>>>>>> 223fc33b20b9443ea6baf67e98cd3a35390fae05
     width: 75%;
     border: 1px solid silver;
     margin-left: 13%;
     margin-top: 1%;
 }
 
+<<<<<<< HEAD
 #cont_for_quant {
     margin-top: -67%;
     margin-left: 53%;
 }
+=======
+>>>>>>> 223fc33b20b9443ea6baf67e98cd3a35390fae05

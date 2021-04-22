@@ -12,10 +12,23 @@ function fetch_item() {
     playersRef.orderByChild("Custom_Email_").equalTo(cust_email).on("child_added", function(data) {
         count_cart++;
 
+<<<<<<< HEAD
         document.getElementById('_cart_').innerHTML = count_cart;
 
         var total_prod_count = sessionStorage.setItem("_total_prod_", count_cart);
 
+=======
+        document.getElementById('_cart_').innerHTML = count_cart;   
+
+        var total_prod_count = sessionStorage.setItem("_total_prod_" , count_cart);
+
+    });
+
+    var dbref = firebase.database().ref("customer_account/");
+        dbref.orderByChild("Email").equalTo(cust_email).on("child_added", function(data) {
+        let cus_name_ = data.val().Full_name;
+        document.getElementById('cust_name_').innerHTML = cus_name_;      
+>>>>>>> 223fc33b20b9443ea6baf67e98cd3a35390fae05
     });
 
     // customer name fetched here
@@ -90,11 +103,19 @@ function showitems(Item_id_, Item_img, Item_Catagory, Item_Name, Item_Price) {
     var btn_cart = document.createElement('button');
 
     btn_buy.innerHTML = "Buy Now";
+<<<<<<< HEAD
     btn_buy.id = "buy_btn_";
 
     btn_cart.innerHTML = "Add to Cart";
     btn_cart.id = "cart_btn_";
 
+=======
+    btn_buy.id="buy_btn_";
+
+    btn_cart.innerHTML = "Add to Cart";
+    btn_cart.id = "cart_btn_";
+   
+>>>>>>> 223fc33b20b9443ea6baf67e98cd3a35390fae05
 
     div3_.appendChild(img_);
     div3_.appendChild(para_name);

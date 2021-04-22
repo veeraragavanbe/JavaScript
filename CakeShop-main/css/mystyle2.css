@@ -36,12 +36,15 @@ div.sticky {
 }
 
 @media only screen and (max-width: 600px) {
+<<<<<<< HEAD
     #first_row_ {
         width: 76%;
         border: 1px solid silver;
         margin-left: 12%;
         margin-top: 1%;
     }
+=======
+>>>>>>> 223fc33b20b9443ea6baf67e98cd3a35390fae05
     .navbar {
         width: 110%;
     }
@@ -64,6 +67,7 @@ div.sticky {
         margin-top: 6px;
     }
     #img_element {
+<<<<<<< HEAD
         height: 174px;
         width: 182px;
         margin-top: 4%;
@@ -90,6 +94,9 @@ div.sticky {
     }
     #my_cart_title {
         margin-left: 30%;
+=======
+        margin-top: 4px;
+>>>>>>> 223fc33b20b9443ea6baf67e98cd3a35390fae05
     }
 }
 
@@ -106,10 +113,13 @@ div.sticky {
     top: 50%;
 }
 
+<<<<<<< HEAD
 #my_cart_title {
     margin-left: 45%;
 }
 
+=======
+>>>>>>> 223fc33b20b9443ea6baf67e98cd3a35390fae05
 
 /*Modal*/
 
@@ -197,27 +207,44 @@ h4 {
     background-color: blanchedalmond;
 }
 
+<<<<<<< HEAD
 #first_row_ {
+=======
+#first_row_
+{  
+>>>>>>> 223fc33b20b9443ea6baf67e98cd3a35390fae05
     width: 40%;
     border: 1px solid silver;
     margin-left: 30%;
     margin-top: 1%;
 }
 
+<<<<<<< HEAD
 #buy_now {
     display: none;
 }
 
 #tot_bill_ {
+=======
+#buy_now{
+    display: none;
+    
+}
+#tot_bill_
+{
+>>>>>>> 223fc33b20b9443ea6baf67e98cd3a35390fae05
     width: 20%;
     height: 300px;
     background-color: #e8e8e8;
     margin-top: 3%;
     margin-left: 40%;
 }
+<<<<<<< HEAD
 
 #img_element {
     height: 200px;
     width: 200px;
     margin-top: 4%;
 }
+=======
+>>>>>>> 223fc33b20b9443ea6baf67e98cd3a35390fae05
